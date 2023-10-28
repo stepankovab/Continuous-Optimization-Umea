@@ -1,35 +1,35 @@
 counter = 1
 circle_count = 12
+num = 3
 radius_i_str = str(circle_count * 2 + 1)
 nlc = "nlc = @(x) deal(["
 
 print("f = @(x) 1 - (" + str(circle_count) + " * x(" + radius_i_str + ")^2 * pi);")
 print()
 
-for i in range(1, circle_count + 1):
-    for j in range(i + 1, circle_count + 1):
-        print("g" + str(counter) + " = @(x) (2 * x(" + radius_i_str + "))^2 - (x(" + str(i) + ") - x(" + str(j) + "))^2 - (x(" + str(circle_count + i) + ") - x(" + str(circle_count + j) + "))^2")
-        nlc = nlc + "g" + str(counter) + "(x),"
-        counter += 1
+# for i in range(1, circle_count + 1):
+#     for j in range(i + 1, circle_count + 1):
+#         print("g" + str(counter) + " = @(x) (2 * x(" + radius_i_str + "))^2 - (x(" + str(i) + ") - x(" + str(j) + "))^2 - (x(" + str(circle_count + i) + ") - x(" + str(circle_count + j) + "))^2")
+#         nlc = nlc + "g" + str(counter) + "(x),"
+#         counter += 1
 
-for i in range(1, 2 * circle_count + 1):
-    print("g" + str(counter) + " = @(x) x(" + radius_i_str + ") - x(" + str(i) + ");")
-    nlc = nlc + "g" + str(counter) + "(x),"
-    counter += 1
-    print("g" + str(counter) + " = @(x) x(" + radius_i_str + ") + x(" + str(i) + ") - 1;")
-    nlc = nlc + "g" + str(counter) + "(x),"
-    counter += 1
-print()
+# for i in range(1, 2 * circle_count + 1):
+#     print("g" + str(counter) + " = @(x) x(" + radius_i_str + ") - x(" + str(i) + ");")
+#     nlc = nlc + "g" + str(counter) + "(x),"
+#     counter += 1
+#     print("g" + str(counter) + " = @(x) x(" + radius_i_str + ") + x(" + str(i) + ") - 1;")
+#     nlc = nlc + "g" + str(counter) + "(x),"
+#     counter += 1
+# print()
 
-nlc = nlc[:-1]
-nlc += "], []);"
-print(nlc)
+# nlc = nlc[:-1]
+# nlc += "], []);"
+# print(nlc)
 
 
 xstart = []
 ystart = []
 
-num = 3
 for i in range(num):
     for j in range(circle_count // num):
         xstart.append(str((i + 1) / (num + 1)))
@@ -50,3 +50,4 @@ print("ycoords = [" + ",".join(["xopt("+ str(circle_count + x) +")" for x in ran
 
 print()
 
+print(str(circle_count) + " * radius^2 * pi")
