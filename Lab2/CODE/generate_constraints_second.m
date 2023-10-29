@@ -21,11 +21,8 @@ function [g, geq] = generate_constraints_second(x)
     end
 
     for i = 1:n
-        g(k) = sqrt(x(i)^2 + x(n + i)^2) + x(2 * n + 1) - 1;
+        g(k) = x(i)^2 + x(n + i)^2 + (x(2 * n + 1) - 1)^2;
         k = k + 1;
     end
-
-    
-
 end
 
