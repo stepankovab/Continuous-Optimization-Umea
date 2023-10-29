@@ -4,7 +4,7 @@ function [area, xopt] = discs_into_quater_circle(n_discs, repetitions, start)
 
     f = @(x) - n_discs * x(2 * n_discs + 1)^2;
     
-    options = optimset('LargeScale','off','TolFun',.001,'MaxIter',repetitions,'MaxFunEvals',repetitions);
+    options = optimoptions('fmincon','Algorithm','sqp');
 
     lb = zeros(1,2 * n_discs + 1);
     lb(2 * n_discs + 1) = start(2 * n_discs + 1);

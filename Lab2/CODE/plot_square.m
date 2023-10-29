@@ -17,18 +17,17 @@ function plot_square(n_discs, xopt)
     ylim([0,1]);
 
 
-
     
     % Draw cicles
     numpoints = 64; % how many points in a circle
 
     % for task 2
-    theta=linspace(0,2*pi,numpoints);
-    rho=ones(1,numpoints);
-    [circX,circY] = pol2cart(theta,rho);
-    circX=circX+0;
-    circY=circY+0;
-    plot(circX,circY,'b-');
+    %theta=linspace(0,2*pi,numpoints);
+    %rho=ones(1,numpoints);
+    %[circX,circY] = pol2cart(theta,rho);
+    %circX=circX+0;
+    %circY=circY+0;
+    %plot(circX,circY,'b-');
 
     % for task 3
     theta=linspace(0,2*pi,numpoints);
