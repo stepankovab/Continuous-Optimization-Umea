@@ -1,14 +1,13 @@
 %disks_into_square_fmincon(5, 5)
 
+s_points = 5;
+loop_iter = 3;
+iter = 1e12;
+max_area = 0;
+max_circles = 0;
 
+for circles = 49
 
-for circles = 18:30
-    s_points = 5;
-    loop_iter = 5;
-    iter = 1e12;
-    
-    max_area = 0;
-    max_circles = 0;
     xopt = zeros(1, 2 * circles + 1);
     
     x = starting_points_quatercircle(circles, s_points);
